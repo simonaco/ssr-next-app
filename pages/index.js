@@ -4,7 +4,7 @@ function Home({ numbers }) {
   return (
     <div>
       <Link href="/numbers">
-        <a>Numbers</a>
+        <a>Magic Numbers</a>
       </Link>
     </div>
   );
