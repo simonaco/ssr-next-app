@@ -20,7 +20,7 @@ jobs:
           submodules: true
       - name: Build And Deploy
         id: builddeploy
-        uses: rupareddy5-21/testDeploy@master
+        uses: rupareddy5-21/testDeploy@latest
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_WHITE_OCEAN_034964809 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
@@ -31,6 +31,8 @@ jobs:
           api_location: "" # Api source code path - optional
           output_location: "" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
+        env: # Add environment variables here
+          ENABLE_PREVIEW_FEATURES: true
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
